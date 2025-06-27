@@ -30,19 +30,17 @@
       color: #ffd369;
     }
 
-    video {
+      video {
         margin: 20px 0;
         border-radius: 12px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        width: 60vw;
-        max-width: 360px;
-        aspect-ratio: 9/16; /* paksa rasio agar tidak terlalu tinggi */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        width: 240px;
+        height: 426px; /* kira-kira aspect ratio 9:16 */
         object-fit: cover;
         background: black;
         z-index: 1;
-        opacity: 0;
-        animation: fadeIn 2s ease-in-out forwards;
       }
+
 
     @keyframes fadeIn {
       to {
