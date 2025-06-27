@@ -28,14 +28,18 @@
       color: #ffd369;
     }
 
-    video {
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      max-width: 90%;
-      height: auto;
-      z-index: 1;
-    }
+     video {
+          margin: 20px 0;
+          border-radius: 12px;
+          box-shadow: 0 0 20px rgba(0,0,0,0.5);
+          width: 80vw;         /* Gunakan lebar viewport */
+          max-width: 700px;    /* Biar nggak terlalu besar di layar gede */
+          height: auto;
+          z-index: 1;
+          background: black;   /* Buat fallback background */
+          opacity: 0;
+          animation: fadeIn 2s ease-in-out forwards;
+        }
 
     p {
       font-size: 1.2em;
@@ -54,16 +58,11 @@
       animation: rise 20s infinite ease-in;
     }
 
-    @keyframes rise {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-120vh) scale(0.5);
-        opacity: 0;
-      }
-    }
+   @keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
 
     .button-container {
       margin-top: 20px;
