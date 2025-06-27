@@ -30,10 +30,18 @@
       color: #ffd369;
     }
 
-video {
-  width: 180px;
-  height: 320px;
-}
+  video {
+        margin: 20px 0;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        width: 80vw;
+        max-width: 700px;
+        height: auto;
+        background: black;
+        z-index: 1;
+        opacity: 0;
+        animation: fadeIn 2s ease-in-out forwards;
+      }
 
 
     @keyframes fadeIn {
@@ -124,7 +132,7 @@ video {
   <p>
     Hari ini aku nggak bisa ada di sana. Untuk Jakarta dari Jogja, ku kirimkan cerita kecil. Sedikit rasa yang terus hidup diantara jarak, dan waktu yang belum mempertemukan.
   </p>
-  <video controls autoplay loop playsinline poster="Ulangtahun.jpg">
+  <video controls autoplay loop mute playsinline poster="Ulangtahun.jpg">
     <source src="https://res.cloudinary.com/dq0tfapcd/video/upload/v1751008602/ufdr60e38cgdjudvssqe.mp4" type="video/mp4">
     Browser kamu tidak mendukung video ini.
   </video>
