@@ -30,18 +30,19 @@
       color: #ffd369;
     }
 
+ 
   video {
         margin: 20px 0;
         border-radius: 12px;
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        width: 80vw;
-        max-width: 700px;
+        width: 80vw;           /* 80% dari lebar layar */
+        max-width: 350px;      /* batas maksimum biar nggak terlalu gede */
         height: auto;
-        background: black;
+        aspect-ratio: 16 / 9;  /* bikin jadi persegi panjang landscape */
         z-index: 1;
-        opacity: 0;
-        animation: fadeIn 2s ease-in-out forwards;
+        background: black;
       }
+    
     @keyframes fadeIn {
       to {
         opacity: 1;
