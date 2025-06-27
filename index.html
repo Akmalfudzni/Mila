@@ -20,6 +20,8 @@
       text-align: center;
       height: 100vh;
       position: relative;
+      border-radius: 50%;
+    
     }
 
     h1 {
@@ -29,17 +31,18 @@
     }
 
     video {
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      width: 80vw;
-      max-width: 700px;
-      height: auto;
-      background: black;
-      z-index: 1;
-      opacity: 0;
-      animation: fadeIn 2s ease-in-out forwards;
-    }
+        margin: 20px 0;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        width: 60vw;
+        max-width: 360px;
+        aspect-ratio: 9/16; /* paksa rasio agar tidak terlalu tinggi */
+        object-fit: cover;
+        background: black;
+        z-index: 1;
+        opacity: 0;
+        animation: fadeIn 2s ease-in-out forwards;
+      }
 
     @keyframes fadeIn {
       to {
@@ -128,7 +131,7 @@
   <h1>🎉 Selamat Ulang Tahun, Mila!</h1>
 
   <p>
-    Hari ini aku nggak bisa ada di sana. Untuk Jakarta dari Jogja, ku kirimkan cerita kecil. Sebuah animasi tentang rasa yang terus hidup di jarak, dan waktu yang belum mempertemukan.
+    Hari ini aku nggak bisa ada di sana. Untuk Jakarta dari Jogja, ku kirimkan cerita kecil. Sedikit rasa yang terus hidup di jarak, dan waktu yang belum mempertemukan.
   </p>
 
   <video controls autoplay loop muted playsinline poster="Ulangtahun.jpg">
@@ -140,7 +143,6 @@
     Untuk kamu yang selalu hebat, tetap semangat, dan pantang menyerah. <br>
     Terima kasih sudah jadi kamu.<br>
     Selamat ulang tahun, Mila.<br>
-    Tunggu aku, kita bakal rayain bareng nanti.<br>
     Mari kita rayakan hal-hal yang sudah kamu lewati.
   </p>
 
