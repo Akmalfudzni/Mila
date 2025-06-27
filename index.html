@@ -28,18 +28,24 @@
       color: #ffd369;
     }
 
-     video {
-          margin: 20px 0;
-          border-radius: 12px;
-          box-shadow: 0 0 20px rgba(0,0,0,0.5);
-          width: 80vw;         /* Gunakan lebar viewport */
-          max-width: 700px;    /* Biar nggak terlalu besar di layar gede */
-          height: auto;
-          z-index: 1;
-          background: black;   /* Buat fallback background */
-          opacity: 0;
-          animation: fadeIn 2s ease-in-out forwards;
-        }
+    video {
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      width: 80vw;
+      max-width: 700px;
+      height: auto;
+      background: black;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
 
     p {
       font-size: 1.2em;
@@ -58,11 +64,16 @@
       animation: rise 20s infinite ease-in;
     }
 
-   @keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) scale(0.5);
+        opacity: 0;
+      }
+    }
 
     .button-container {
       margin-top: 20px;
@@ -80,7 +91,6 @@
       position: relative;
       transition: all 0.4s ease;
       clip-path: circle(50% at 50% 50%);
-      background: #ffd369;
     }
 
     .btn::before {
@@ -94,8 +104,22 @@
 
     .btn:hover {
       background-color: #ffb347;
-      clip-path: path('M10 30 A20 20 0 0 1 50 30 A20 20 0 0 1 90 30 Q90 60 50 90 Q10 60 10 30 Z');
       transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      .btn {
+        width: 80px;
+        height: 80px;
+      }
     }
   </style>
 </head>
@@ -104,26 +128,24 @@
   <h1>🎉 Selamat Ulang Tahun, Mila!</h1>
 
   <p>
-    Hari ini aku nggak bisa ada di sana, Untuk Jakarta dari Jogja , ku kirimkan cerita kecil. Sebuah animasi tentang rasa yang terus hidup di jarak, dan waktu yang belum mempertemukan.
+    Hari ini aku nggak bisa ada di sana. Untuk Jakarta dari Jogja, ku kirimkan cerita kecil. Sebuah animasi tentang rasa yang terus hidup di jarak, dan waktu yang belum mempertemukan.
   </p>
 
-  <!-- Video animatic dari file GitHub -->
-     <video controls autoplay loop muted>
-  <source src="https://res.cloudinary.com/dq0tfapcd/video/upload/v1751008602/ufdr60e38cgdjudvssqe.mp4" type="video/mp4">
-  Browser kamu tidak mendukung video ini.
-</video>
-  
-  <p> Untuk kamu yang selalu hebat, tetap semangat, dan pantang menyerah. <br>
+  <video controls autoplay loop muted playsinline poster="Ulangtahun.jpg">
+    <source src="https://res.cloudinary.com/dq0tfapcd/video/upload/v1751008602/ufdr60e38cgdjudvssqe.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video ini.
+  </video>
+
+  <p>
+    Untuk kamu yang selalu hebat, tetap semangat, dan pantang menyerah. <br>
     Terima kasih sudah jadi kamu.<br>
     Selamat ulang tahun, Mila.<br>
     Tunggu aku, kita bakal rayain bareng nanti.<br>
-    Mari kita rayakan hal-hal yang sudah kamu lewati<br>
+    Mari kita rayakan hal-hal yang sudah kamu lewati.
   </p>
 
-
   <div class="button-container">
-    <button class="btn" onclick="alert('Semoga suka ya, Milaku ✨')"></button>
-    
+    <button class="btn" onclick="showMessage()"></button>
   </div>
 
   <script>
@@ -136,6 +158,11 @@
       heart.style.animationDuration = `${10 + Math.random() * 10}s`;
       heart.style.fontSize = `${14 + Math.random() * 20}px`;
       document.body.appendChild(heart);
+    }
+
+    // Teks popup kado 🎁
+    function showMessage() {
+      alert(`🌸 Untuk Mila 🌸\n\nSelamat ulang tahun yaa~\nTetap hebat, tetap kuat, dan tetap jadi kamu yang aku sayang.\n\n🎈 Dari Jogja, dengan cinta - Akmal 💌`);
     }
   </script>
 
